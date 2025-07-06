@@ -65,10 +65,10 @@ docker stop jenkinsapss 2>/dev/null || true
 docker rm jenkinsapss 2>/dev/null || true
 
 echo "# Build Docker Image #"
-docker build -t jenkins-apps .
+docker build -t nginx .
 
 echo "# Jalankan Container di Port 3002 #"
-docker run -d -p 3002:80 --name jenkinsapss jenkins-apps
+docker run -d -p 3002:80 --name jenkinsapss nginx
 
 echo "# Bersihkan Docker Image Lama #"
 docker image prune -f
